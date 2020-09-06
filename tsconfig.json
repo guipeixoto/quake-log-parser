@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "lib": ["es2019", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "module": "commonjs",
+    "target": "es2019",
+    "allowJs": true,
+
+    "outDir": "./dist",
+    "rootDir": "./",
+
+    "removeComments": true,
+
+    "strict": true,
+
+    "baseUrl": "./src",
+    "paths": {
+      "@models/*": ["models/*"],
+      "@controllers/*": ["http/controllers/*"],
+      "@routes/*": ["http/routes/*"],
+      "@validations/*": ["http/validations/*"],
+      "@repositories/*": ["repositories/*"],
+      "@services/*": ["services/*"],
+      "@config/*": ["config/*"],
+      "@shared/*": ["shared/*"]
+    },
+
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
