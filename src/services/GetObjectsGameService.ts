@@ -6,6 +6,20 @@ interface IReturnDTO {
 
 export default class GetObjectsGameService {
   public run(line: string): IReturnDTO {
-    return { killerPlayerName: '', deadPlayerName: '', weaponName: '' };
+    const startKillerNameIndex = line.lastIndexOf(':');
+    const killedWordIndex = line.lastIndexOf('killed');
+    const byWordIndex = line.lastIndexOf('by');
+
+    const killerPlayerName = line
+      .substring(startKillerNameIndex + 1, killedWordIndex)
+      .trim();
+
+    const deadPlayerName = line
+      .substring(killedWordIndex + 6, byWordIndex)
+      .trim();
+
+    const weaponName = line.substring(byWordIndex + 2, line.length).trim();
+
+    return { killerPlayerName, deadPlayerName, weaponName };
   }
 }
