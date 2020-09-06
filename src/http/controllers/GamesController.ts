@@ -8,6 +8,8 @@ import GetGameByIdService from '@services/GetGameByIdService';
 
 export default class GamesController {
   public async index(request: Request, response: Response): Promise<Response> {
+    const { player_name, weapon_name } = request.query;
+
     const gamePlayerRepository = new GamePlayerRepository();
     const gameWeaponRepository = new GameWeaponRepository();
     const gameRepository = new GameRepository(
@@ -16,7 +18,10 @@ export default class GamesController {
     );
     const listGamesService = new ListGamesService(gameRepository);
 
-    const games = await listGamesService.run();
+    const games = await listGamesService.run({
+      player_name: String(player_name),
+      weapon_name: String(weapon_name),
+    });
 
     return response.json(games);
   }

@@ -1,5 +1,6 @@
 import Game from '@models/Game';
 import IGameRepository from '@repositories/contracts/IGameRepository';
+import IGameFilters from 'dtos/IGameFilters';
 
 export default class FakeGameRepository implements IGameRepository {
   private games: Game[] = [];
@@ -247,7 +248,26 @@ export default class FakeGameRepository implements IGameRepository {
     this.games.push(game5);
   }
 
-  public async find(): Promise<Game[]> {
+  public async find({
+    player_name,
+    weapon_name,
+  }: IGameFilters): Promise<Game[]> {
+    if (player_name && player_name !== 'undefined') {
+      this.games = this.games.filter(game =>
+        game.players.some(player =>
+          player.name.toLowerCase().includes(player_name.toLowerCase()),
+        ),
+      );
+    }
+
+    if (weapon_name && weapon_name !== 'undefined') {
+      this.games = this.games.filter(game =>
+        game.weapons.some(weapon =>
+          weapon.name.toLowerCase().includes(weapon_name.toLowerCase()),
+        ),
+      );
+    }
+
     return this.games;
   }
 
