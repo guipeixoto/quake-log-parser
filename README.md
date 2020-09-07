@@ -55,4 +55,4 @@ $ yarn test
 * [Jest](https://jestjs.io/) - Unit tests
 * [Express](https://expressjs.com/pt-br/) - HTTP server
 * [Celebrate](https://github.com/arb/celebrate) - Request validations
-* [Line Header](https://github.com/nickewing/line-reader) - Reader file libe by line
+* [Line Header](https://github.com/nickewing/line-reader) - Reader file line by line
