@@ -2,7 +2,7 @@
 
 ## Heeeey dev 👨‍💻
 
-O objetivo do projeto é construir uma API no modelo RESTFul, que faça a leitura do arquivo `games.log` e converat em object Javascript `(JSON)`.
+O objetivo do projeto é construir uma API no modelo RESTFul, que faça a leitura do arquivo `games.log` e converter em object Javascript `(JSON)`.
 
 Foi desenvolvido com a finalidade de desafio técnico para análise à uma vaga de dev.
 
