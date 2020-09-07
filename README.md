@@ -1,4 +1,4 @@
-# Quake III Arena = Log Parser API
+# Quake III Arena - Log Parser API
 
 ## Heeeey dev 👨‍💻
 
